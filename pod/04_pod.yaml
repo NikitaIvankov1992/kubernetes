@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pods-checker
+spec:
+  containers:
+  - name: pods-checker
+    image: ivankovnikita/checker:1.0
+    imagePullPolicy: Always
+  restartPolicy: Never
+  serviceAccountName: checker-robot

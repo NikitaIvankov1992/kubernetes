@@ -1,0 +1,17 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: cronjob-pods-checker
+spec:
+  schedule: "0 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: pods-checker
+            image: ivankovnikita/checker:1.0
+            imagePullPolicy: Always
+          restartPolicy: Never
+          serviceAccountName: checker-robot
+      backoffLimit: 4
