@@ -49,7 +49,7 @@ Here the launching command may look like the following <br />
 If you want to launch the script on a daily basis, you can create a cronjob which will do this work for you, just follow the steps below:
 
 - As the application packed into a simple Docker container, you should store it somewhere(public github repo or your own private repository). 
-Now it's stored at the github as following 'ivankovnikita/pods_checker'.
+Now it's stored at the github as following 'ivankovnikita/checker'.
 You can create your own image, following the steps:
 
 	- Clone the git repository on your workstation <br />
