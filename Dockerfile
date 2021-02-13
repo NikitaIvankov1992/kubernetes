@@ -14,4 +14,4 @@ RUN apt update
 RUN pip3 install -r requirements.txt
 
 # command to run on container start
-CMD [ "python", "./checker.py" ]
+ENTRYPOINT [ "python3", "./checker.py" ]

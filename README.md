@@ -1,15 +1,15 @@
 # Pods checker
 
-**General overview**
+## General overview
 
 The script has been created for simple evaluation of following rules
 - ensure the pod only uses images prefixed with 'bitnami/'
-- ensure the pod contains a label 'team' with some value
+- ensure the pod is labeled 'team' label
 - ensure the pod has not been running for more than 7 days according to it's 'startTime'
 
 The evaluation result should be outputted on stdout in JSON log format one line per pod
 
-**How to use**
+## How to use
 
 There are three possible way how to launch the script
 - Manually
@@ -38,7 +38,7 @@ The simplest way to get the result is to launch python script, you must do it in
 - Launch the script <br />
 ```python3 checker.py```
 
-During execution the script looks for a kubeconfig file(by default stored at ~./kube/)
+During the execution the script looks for a kubeconfig file(by default stored at ~./kube/)
 You can overwrite this behavior by specifying the location of kubeconfig file via --config_file argument(you can also use --context argument to rewrite context value as well)
 
 Here the launching command may look like the following <br />
@@ -49,7 +49,7 @@ Here the launching command may look like the following <br />
 If you want to launch the script on a daily basis, you can create a cronjob which will do this work for you, just follow the steps below:
 
 - As the application packed into a simple Docker container, you should store it somewhere(public github repo or your own private repository). 
-Now it's stored at the github as following 'ivankovnikita/checker'.
+Now it's stored at the github as the following 'ivankovnikita/checker'.
 You can create your own image, following the steps:
 
 	- Clone the git repository on your workstation <br />
@@ -90,10 +90,9 @@ For getting the result use <br />
 ``` kubectl logs pods-checker ```
 command <br />
 
-In second and third cases instead of kubeconfig service account will be used.
+In the second and third cases instead of kubeconfig service account will be used.
 
 **All the above tested on v1.20.0 cluster version**
-
 
 
 
